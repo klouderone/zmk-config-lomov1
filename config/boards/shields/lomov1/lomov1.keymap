@@ -17,7 +17,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-   
     };
 
     keymap {
@@ -32,7 +31,8 @@
             &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &kp &lt LONE ESC 
 
             &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
-
+            
+            >;
         };
 
         layer_one {
@@ -44,6 +44,7 @@
 
             &kp LCTRL(LSHIFT(F11))                             &kp LCTRL(Z)
 
+            >;
         };
 
 
@@ -56,6 +57,7 @@
 
             &none                               &none
 
+            >;
         };
     };
 };
