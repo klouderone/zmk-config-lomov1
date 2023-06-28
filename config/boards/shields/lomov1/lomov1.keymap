@@ -7,8 +7,23 @@
 #define LBT   2
 
 / {
-    keymap{
+    behaviors {
+        lt: layertap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYERTAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+   
+    };
+
+    keymap {
+
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
 
@@ -18,7 +33,7 @@
 
             &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
 
-        }
+        };
 
         layer_one {
             bindings = < 
@@ -29,7 +44,8 @@
 
             &kp LCTRL(LSHIFT(F11))                             &kp LCTRL(Z)
 
-        }
+        };
+
 
          layer_bt {
             bindings = <
@@ -40,6 +56,6 @@
 
             &none                               &none
 
-        }
-    }
-}
+        };
+    };
+};
