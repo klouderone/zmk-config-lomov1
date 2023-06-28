@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LONE   1
-#define LBT   2
+#define LONE 1
+#define BT 2
 
 / {
     behaviors {
@@ -28,7 +28,7 @@
 
             &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
 
-            &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &kp &lt LONE ESC 
+            &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &lt LONE ESC 
 
             &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
             
@@ -40,9 +40,9 @@
 
             &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(LSHIFT(F8))
 
-            &kp LCTRL(LSHIFT(F9))    &kp LCTRL(LSHIFT(F10))    &kp LCTRL(Y)
+            &kp LCTRL(TAB)    &kp LCTRL(LSHIFT(F9))    &kp LCTRL(Y)
 
-            &kp LCTRL(LSHIFT(F11))                             &kp LCTRL(Z)
+            &kp LCTRL(LSHIFT(F10))                             &kp LCTRL(Z)
 
             >;
         };
