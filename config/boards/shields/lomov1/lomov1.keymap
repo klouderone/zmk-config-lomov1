@@ -1,0 +1,45 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define LONE   1
+#define LBT   2
+
+/ {
+    keymap{
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+
+            &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
+
+            &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &kp &lt LONE ESC 
+
+            &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
+
+        }
+
+        layer_one {
+            bindings = < 
+
+            &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(LSHIFT(F8))
+
+            &kp LCTRL(LSHIFT(F9))    &kp LCTRL(LSHIFT(F10))    &kp LCTRL(Y)
+
+            &kp LCTRL(LSHIFT(F11))                             &kp LCTRL(Z)
+
+        }
+
+         layer_bt {
+            bindings = <
+
+            &bootloader       &bt BT_SEL 0      &bt BT_SEL 1
+
+            &none             &bt BT_CLR        &none
+
+            &none                               &none
+
+        }
+    }
+}

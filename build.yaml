@@ -14,10 +14,4 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: two_percent_milk
-include:
-  - board: nice_nano_v2
-    shield: two_percent_milk
-include:
-  - board: nice_nano_v2
-    shield: two_percent_milk
+    shield: lomov1 nice_view_adapter nice_view
