@@ -6,8 +6,14 @@
 #define LONE 1
 #define BT 2
 
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+};
+
 / {
 
+    
     keymap {
 
         compatible = "zmk,keymap";
@@ -15,17 +21,17 @@
         default_layer {
         bindings = <
         &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
-        &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &kp ESC 
-        &kp ESC                                            &kp LCTRL(LSHIFT(F5))
+        &kp LSHIFT               &kp ESC                   &kp LCTRL(LSHIFT(F4))     
+        &mt LONE LCTRL                                     &kp LCTRL(LSHIFT(F5))
             
         >;
         };
        
         layer_one {
         bindings = < 
-        &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(LSHIFT(F8))
-        &kp LCTRL(TAB)           &kp LCTRL(LSHIFT(F9))     &kp LCTRL(Y)
-        &kp LCTRL(LSHIFT(F10))                             &kp LCTRL(Z)
+        &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(Y)
+        &mt BT LCTRL(TAB)        &kp LCTRL(LSHIFT(F8))     &kp LCTRL(Z)
+        &kp LCTRL(LSHIFT(F9))                              &kp LCTRL(LSHIFT(F10))                             
 
         >;
         };
