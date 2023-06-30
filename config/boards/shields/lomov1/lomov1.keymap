@@ -30,18 +30,18 @@
 
         default_layer {
         bindings = <
-        &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
-        &kp LSHIFT               &kp ESC                   &kp LCTRL(LSHIFT(F4))     
-        &mt LAYERONE LCTRL                                     &kp LCTRL(LSHIFT(F5))
+        &kp LC(LS(F1))    &kp LC(LS(F2))     &kp LC(LS(F3))
+        &kp LSHIFT               &kp ESC     &kp LC(LS(F4))     
+        &mt LAYERONE LCTRL                   &kp LC(LS(F5))
             
         >;
         };
        
         layer_one {
         bindings = < 
-        &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(Y)
-        &mt BLUETOOTH LCTRL(TAB)        &kp LCTRL(LSHIFT(F8))     &kp LCTRL(Z)
-        &kp LCTRL(LSHIFT(F9))                              &kp LCTRL(LSHIFT(F10))                             
+        &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LCTRL(Y)
+        &mt BLUETOOTH LCTRL(TAB)        &kp LC(LS(F8))     &kp LCTRL(Z)
+        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
         >;
         };
