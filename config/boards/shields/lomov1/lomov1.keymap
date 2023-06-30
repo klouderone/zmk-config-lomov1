@@ -7,7 +7,7 @@
 #define BT 2
 
 / {
-    
+
     keymap {
 
         compatible = "zmk,keymap";
@@ -15,8 +15,8 @@
         default_layer {
         bindings = <
         &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
-        &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &lt LONE ESC 
-        &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
+        &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &kp ESC 
+        &kp ESC                                            &kp LCTRL(LSHIFT(F5))
             
         >;
         };
