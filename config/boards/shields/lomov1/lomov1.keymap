@@ -6,11 +6,6 @@
 #define LAYERONE 1
 #define BLUETOOTH 2
 
-&mt {
-    tapping-term-ms = <200>;
-    flavor = "tap-preferred";
-};
-
 / {
     
     keymap {
@@ -19,27 +14,27 @@
 
         default_layer {
         bindings = <
-        &kp LC(LS(F1))           &kp LC(LS(F2))     &kp LC(LS(F3))
-        &kp LSHIFT               &kp ESC            &kp LC(LS(F4))     
-        &lt LAYERONE LCTRL                          &kp LC(LS(F5))
+         &none              &none       &none
+        &none              &none       &none
+        &none                          &none
             
         >;
         };
        
         layer_one {
         bindings = < 
-        &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LC(y)
-        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(z)
-        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
+          &none              &none       &none
+        &none              &none       &none
+        &none                          &none                          
 
         >;
         };
         
         layer_bt {
         bindings = <
-        &none             &bt BT_SEL 0      &bt BT_SEL 1
-        &none             &bt BT_CLR        &none
-        &none                               &bootloader
+        &none              &none       &none
+        &none              &none       &none
+        &none                          &none
 
         >;
         };
