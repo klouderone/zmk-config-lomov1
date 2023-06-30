@@ -12,18 +12,7 @@
 };
 
 / {
-    behaviors {
-        mt: mod_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "mod_tap";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <0>;
-			bindings = <&kp>, <&kp>;
-         };
-    };
-
+    
     keymap {
 
         compatible = "zmk,keymap";
@@ -32,7 +21,7 @@
         bindings = <
         &kp LC(LS(F1))           &kp LC(LS(F2))     &kp LC(LS(F3))
         &kp LSHIFT               &kp ESC            &kp LC(LS(F4))     
-        &mt LAYERONE LCTRL                          &kp LC(LS(F5))
+        &lt LAYERONE LCTRL                          &kp LC(LS(F5))
             
         >;
         };
@@ -40,7 +29,7 @@
         layer_one {
         bindings = < 
         &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LC(y)
-        &mt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(z)
+        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(z)
         &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
         >;
