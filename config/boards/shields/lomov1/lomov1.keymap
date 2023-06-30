@@ -13,39 +13,30 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <
-
-            &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
-
-            &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &lt LONE ESC 
-
-            &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
+        bindings = <
+        &kp LCTRL(LSHIFT(F1))    &kp LCTRL(LSHIFT(F2))     &kp LCTRL(LSHIFT(F3))
+        &kp LSHIFT               &kp LCTRL(LSHIFT(F4))     &lt LONE ESC 
+        &lt LONE ESC                                       &kp LCTRL(LSHIFT(F5))
             
-            >;
+        >;
         };
-
+       
         layer_one {
-            bindings = < 
+        bindings = < 
+        &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(LSHIFT(F8))
+        &kp LCTRL(TAB)           &kp LCTRL(LSHIFT(F9))     &kp LCTRL(Y)
+        &kp LCTRL(LSHIFT(F10))                             &kp LCTRL(Z)
 
-            &kp LCTRL(LSHIFT(F6))    &kp LCTRL(LSHIFT(F7))     &kp LCTRL(LSHIFT(F8))
-
-            &kp LCTRL(TAB)           &kp LCTRL(LSHIFT(F9))     &kp LCTRL(Y)
-
-            &kp LCTRL(LSHIFT(F10))                             &kp LCTRL(Z)
-
-            >;
+        >;
         };
+        
+        layer_bt {
+        bindings = <
+        &bootloader       &bt BT_SEL 0      &bt BT_SEL 1
+        &none             &bt BT_CLR        &none
+        &none                               &none
 
-         layer_bt {
-            bindings = <
-
-            &bootloader       &bt BT_SEL 0      &bt BT_SEL 1
-
-            &none             &bt BT_CLR        &none
-
-            &none                               &none
-
-            >;
+        >;
         };
     };
 };

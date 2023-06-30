@@ -1,5 +1,11 @@
 if SHIELD_LOMOV1
 
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
 config ZMK_KEYBOARD_NAME
    default "Macro LOMO v1"
 
