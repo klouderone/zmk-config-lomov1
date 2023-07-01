@@ -14,27 +14,27 @@
 
         default_layer {
         bindings = <
-         &none              &none       &none
-        &none              &none       &none
-        &none                          &none
+        &kp LC(LS(F1))           &kp LC(LS(F2))     &kp LC(LS(F3))
+        &kp LSHIFT               &kp ESC            &kp LC(LS(F4))     
+        &lt LAYERONE LC(LS(F5))                     &kp LCTRL 
             
         >;
         };
        
         layer_one {
         bindings = < 
-          &none              &none       &none
-        &none              &none       &none
-        &none                          &none                          
+        &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LC(y)
+        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(z)
+        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
         >;
         };
         
         layer_bt {
         bindings = <
-        &none              &none       &none
-        &none              &none       &none
-        &none                          &none
+        &none             &bt BT_SEL 0      &bt BT_SEL 1
+        &none             &bt BT_CLR        &none
+        &none                               &bootloader
 
         >;
         };
