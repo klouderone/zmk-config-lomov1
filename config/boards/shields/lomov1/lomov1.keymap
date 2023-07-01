@@ -14,7 +14,7 @@
 
         default_layer {
         bindings = <
-        &kp LC(LS(F1))           &kp LC(LS(F2))     &kp LC(LS(F3))
+        &kp LC(LS(a))           &kp LC(LS(a))     &kp LC(LS(a))
         &kp LSHIFT               &kp ESC            &kp LC(LS(F4))     
         &lt LAYERONE LC(LS(F5))                     &kp LCTRL 
             
