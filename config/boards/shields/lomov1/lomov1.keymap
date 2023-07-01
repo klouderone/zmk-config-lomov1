@@ -24,8 +24,8 @@
         layer_one {
         bindings = < 
         &none                  &none      &none 
-        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(z)
-        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
+        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))    &none 
+                &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
         >;
         };
