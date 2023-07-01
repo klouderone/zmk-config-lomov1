@@ -1,6 +1,6 @@
 if SHIELD_LOMOV1
 
 config ZMK_KEYBOARD_NAME
-   default "Macro LOMO v1"
+   default "lomov1"
 
 endif

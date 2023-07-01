@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: klouderone
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
-      remote: klouderone
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
   self:
