@@ -2,6 +2,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+nice_view_spi: &spi0 {
+    compatible = "nordic,nrf-spim";
+    sck-pin = <20>;
+    mosi-pin = <22>;
+    miso-pin = <25>;
+    cs-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>;
+};
+
 #define LAYERZERO 0
 #define LAYERONE 1
 #define BLUETOOTH 2
