@@ -21,12 +21,3 @@
     };
 };
 
-
-nice_view_spi: &spi0 {
-    compatible = "nordic,nrf-spim";
-    mosi-pin = <4>;
-    sck-pin = <3>;
-    miso-pin = <25>;
-    cs-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
-
-};
