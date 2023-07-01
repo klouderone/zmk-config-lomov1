@@ -8,6 +8,9 @@
 
 / {
     
+
+
+
     keymap {
 
         compatible = "zmk,keymap";
@@ -23,9 +26,9 @@
        
         layer_one {
         bindings = < 
-        &none                  &none      &none 
-        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))    &none 
-                &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
+        &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LC(Y)
+        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(Z)
+        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
         >;
         };
