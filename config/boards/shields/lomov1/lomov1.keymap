@@ -134,6 +134,6 @@ nice_view_spi: &spi0 {
              &none             &bt BT_CLR        &none
              &none                               &none   
              >;
-        };s
+        };
     };
 };
