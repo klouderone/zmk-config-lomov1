@@ -52,9 +52,9 @@ nice_view_spi: &spi0 {
         //   | FILLET CRV                 | LCTRL + UNDO |
 
         bindings = <
-             &kp LC(LS(F1))            &kp LC(LS(F2))     &kp LC(LS(F3))
-             &kp LSHIFT                &kp ESC            &kp LC(LS(F4))     
-             &lt LAYERONE LC(LS(F5))                      &lt LCTRL LC(Z)   
+             &kp ESC                  &kp LC(LS(F2))     &kp LC(LS(F3))
+             &kp LSHIFT               &kp LC(LS(F1))     &kp LC(LS(F4))     
+             &lt LAYERONE LC(LS(F5))                     &lt LCTRL LC(Z)   
         >;
         };
 
