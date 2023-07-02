@@ -47,8 +47,8 @@ nice_view_spi: &spi0 {
 
     
   
-        //   | ISOLATE       | LINE       | OFFSET       |
-        //   | SHIFT         | ESCAPE     | PLANAR SRF   |
+        //   | ESCAPE        | LINE       | OFFSET       |
+        //   | SHIFT         | ISOLATE    | PLANAR SRF   |
         //   | FILLET CRV                 | LCTRL + UNDO |
 
         bindings = <
