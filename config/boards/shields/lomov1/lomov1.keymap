@@ -56,14 +56,6 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F2))>, <&kp LC(LS(F12))>;
         };
 
-          td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT/SELLAST";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&kp LSHIFT>, <&kp LC(LS(F10))>;
-        };
-
           td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             label = "UNTRIMSRF/EXTENDSRF";
@@ -91,20 +83,20 @@ nice_view_spi: &spi0 {
 
         //   | ESCAPE          | LINE/EXPLODE  | OFFSET/OFFSETSRF  |
         //   | SHIFT/SELLAST   | ISOLATE/SHOW  | ZOOM SELECTED     |
-        //   | FILLET CRV                      | LCTRL             |
+        //   | LAYER CHANGE                    | LCTRL             |
 
         bindings = <
-             &kp ESC               &td1          &td4
-             &td2                  &td0          &kp LC(LS(F4))     
-             &kp LAYERONE                        &kp LCTRL  
+             &kp ESC                     &td1          &td4
+             &kp SHIFT                   &td0          &kp LC(LS(F4))     
+             &lt LAYERONE LC(LS(F10))                  &kp LCTRL  
         >;
         };
 
         layer_one {
 
-        //   | DELETE       | UNTRIM SRF/EXTEND SRF | FILLET     |
-        //   | SWITCH VIEW  | DUPBO                 | REDO       |
-        //   | NONE                                 | UNDO       |
+        //   | DELETE                   | UNTRIM SRF/EXTEND SRF | FILLET     |
+        //   | LAYERCHANGE/SWITCH VIEW  | DUPBO                 | REDO       |
+        //   | NONE                                             | UNDO       |
 
          bindings = < 
              &kp DEL                   &td3               &kp LC(LS(F5))
