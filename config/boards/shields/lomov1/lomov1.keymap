@@ -45,7 +45,7 @@ nice_view_spi: &spi0 {
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(LS(F1))>, <&kp LC(LS(F11));
+            bindings = <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
         };
 
          td1: tap_dance_1 {
@@ -63,8 +63,18 @@ nice_view_spi: &spi0 {
             tapping-term-ms = <200>;
             bindings = <&kp LSHIFT>, <&none>, <&kp LC(F12)>;
         };
+
+          td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(Y)>, <&kp LC(LS(F10))>;
+        };
     };
     
+
+
     keymap {
 
         compatible = "zmk,keymap";
@@ -91,7 +101,7 @@ nice_view_spi: &spi0 {
          bindings = < 
              &kp DEL                   &kp LC(LS(F7))     &kp LC(LS(F8))
              &lt BLUETOOTH LC(TAB)     &kp LC(LS(F6))     &kp LC(LS(F9))
-             &kp LC(LS(F10))                              &kp LC(Y)                           
+             &none                                        &td3                          
         >;
         };
 
@@ -100,7 +110,7 @@ nice_view_spi: &spi0 {
         //   | NONE   | BT Profile 0      | BT Profile 1 |
         //   | NONE   | BT Profile Clear  | NONE         |
         //   | NONE                       | Bootloader   |
-        
+
         bindings = <
              &none             &bt BT_SEL 0      &bt BT_SEL 1
              &none             &bt BT_CLR        &none
