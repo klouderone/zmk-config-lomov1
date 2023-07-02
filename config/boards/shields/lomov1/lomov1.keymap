@@ -61,7 +61,7 @@ nice_view_spi: &spi0 {
             label = "DUPEDGE/DUPBORDER";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F9)>, <LC(LS(F6))>;
+            bindings = <&kp LC(F9)>, <&kp LC(LS(F6))>;
         };
 
 
@@ -79,6 +79,15 @@ nice_view_spi: &spi0 {
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp LC(LS(F3))>, <&kp LC(LS(F8))>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_ctrlz {
+            timeout-ms = <300>;
+            key-positions = <4 6>;
+            bindings = <&kp LC(Z)>;
         };
     };
 
