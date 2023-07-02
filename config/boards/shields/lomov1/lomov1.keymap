@@ -82,15 +82,6 @@ nice_view_spi: &spi0 {
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_ctrlz {
-            timeout-ms = <300>;
-            key-positions = <4 6>;
-            bindings = <&kp LC(Z)>;
-        };
-    };
-
     keymap {
 
         compatible = "zmk,keymap";
