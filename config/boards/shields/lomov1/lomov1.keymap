@@ -44,29 +44,45 @@ nice_view_spi: &spi0 {
         compatible = "zmk,keymap";
 
         default_layer {
+
+    
+  
+        //   | ISOLATE       | LINE       | OFFSET       |
+        //   | SHIFT         | ESCAPE     | PLANAR SRF   |
+        //   | FILLET CRV                 | LCTRL + UNDO |
+
         bindings = <
-        &kp LC(LS(F1))           &kp LC(LS(F2))     &kp LC(LS(F3))
-        &kp LSHIFT               &kp A              &kp LC(LS(F4))     
-        &lt LAYERONE LC(LS(F5))                     &kp LCTRL 
-            
+             &kp LC(LS(F1))            &kp LC(LS(F2))     &kp LC(LS(F3))
+             &kp LSHIFT                &kp ESC            &kp LC(LS(F4))     
+             &lt LAYERONE LC(LS(F5))                      &lt LCTRL LC(Z)   
         >;
         };
-       
-        layer_one {
-        bindings = < 
-        &kp LC(LS(F6))                  &kp LC(LS(F7))     &kp LC(Y)
-        &lt BLUETOOTH LC(TAB)           &kp LC(LS(F8))     &kp LC(Z)
-        &kp LC(LS(F9))                                     &kp LC(LS(F10))                             
 
+
+
+        //   | SHOW         | UNTRIM SRF  | OFFSET SRF |
+        //   | SWITCH VIEW  | DELETE      | EXTEND SRF |
+        //   | NONE                       | REDO       |
+
+        layer_one {
+         bindings = < 
+             &kp LC(LS(F6))            &kp LC(LS(F7))     &kp LC(LS(F8))
+             &lt BLUETOOTH LC(TAB)     &kp DEL            &kp LC(LS(F9))
+             &kp LC(LS(F10))                              &kp LC(Y)                           
         >;
         };
         
+
+
+        //   | NONE   | BT Profile 0      | BT Profile 1 |
+        //   | NONE   | BT Profile Clear  | NONE         |
+        //   | NONE                       | Bootloader   |
+
         layer_bt {
         bindings = <
-        &none             &bt BT_SEL 0      &bt BT_SEL 1
-        &none             &bt BT_CLR        &none
-        &none                               &bootloader
-            
+             &none             &bt BT_SEL 0      &bt BT_SEL 1
+             &none             &bt BT_CLR        &none
+             &none                               &bootloader   
         >;
         };
     };
