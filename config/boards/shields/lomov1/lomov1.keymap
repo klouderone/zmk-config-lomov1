@@ -87,7 +87,7 @@ nice_view_spi: &spi0 {
         combo_CTRLZ {
             timeout-ms = <300>;
             key-positions = <4 6>;
-            bindings = <&kp LC(Z)>
+            bindings = <&kp LC(Z)>;
             layers = <0>;
         };
     };
@@ -109,7 +109,6 @@ nice_view_spi: &spi0 {
              &lt LSHIFT              &kp LAYERONE LC(LS(F10)) 
              >;
         };
-
 
         layer_one {
 
