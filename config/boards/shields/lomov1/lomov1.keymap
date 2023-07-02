@@ -48,7 +48,7 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F4))>, <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
         };
 
-         td1: tap_dance_1 {
+        td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             label = "LINE/JOIN/EXPLODE";
             #binding-cells = <0>;
@@ -56,7 +56,7 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F12))>;
         };
 
-         td2: tap_dance_2 {
+        td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "DUPEDGE/DUPBORDER";
             #binding-cells = <0>;
@@ -65,7 +65,7 @@ nice_view_spi: &spi0 {
         };
 
 
-          td3: tap_dance_3 {
+        td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             label = "TRIM/UNTRIMSRF/EXTENDSRF";
             #binding-cells = <0>;
@@ -81,17 +81,6 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F3))>, <&kp LC(LS(F8))>;
         };
     };
-    
-    combos {
-        compatible = "zmk,combos";
-        combo_CTRLZ {
-            timeout-ms = <300>;
-            key-positions = <4 6>;
-            bindings = <&kp LC(Z)>;
-            layers = <0>;
-        };
-    };
-
 
     keymap {
 
