@@ -101,7 +101,7 @@ nice_view_spi: &spi0 {
             compatible = "zmk,behavior-mod-morph";
             label = "SHOW_CTRLZ";
             #binding-cells = <0>;
-            bindings = <(&td0)>, <&kp LC(Z)>;
+            bindings = <&td0>, <&kp LC(Z)>;
             mods = <(MOD_LSFT)>;
          };
     };
