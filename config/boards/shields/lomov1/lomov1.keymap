@@ -35,7 +35,8 @@ nice_view_spi: &spi0 {
 
 #define LAYERZERO 0
 #define LAYERONE 1
-#define BLUETOOTH 2
+#define LAYERTWO 2
+#define BLUETOOTH 3
 
 / {
 
@@ -50,10 +51,10 @@ nice_view_spi: &spi0 {
 
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "LINE/JOIN/EXPLODE";
+            label = "LINE/JOIN/FILLET";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F12))>;
+            bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F5))>;
         };
 
         td2: tap_dance_2 {
@@ -63,7 +64,6 @@ nice_view_spi: &spi0 {
             tapping-term-ms = <300>;
             bindings = <&kp LC(F9)>, <&kp LC(LS(F6))>;
         };
-
 
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
@@ -80,18 +80,31 @@ nice_view_spi: &spi0 {
             tapping-term-ms = <300>;
             bindings = <&kp LC(LS(F3))>, <&kp LC(LS(F8))>;
         };
-    };
 
-
-    combos {
-        compatible = "zmk,combos";
-        combo_ctrlz {
-            timeout-ms = <300>;
-            key-positions = <4 6>;
-            bindings = <&kp LC(Z)>;
+        td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "GROUP/UNGROUP";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(G)>, <&kp LC(LS(G))>;
         };
-    };
 
+        td6: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "EXTRACTSRF/EXPLODE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(F10)>, <&kp LC(LS(F12))>;
+        };
+
+        showctrlz: show_ctrlz {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHOW_CTRLZ";
+            #binding-cells = <0>;
+            bindings = <(&td0)>, <&kp LC(Z)>;
+            mods = <(MOD_LSFT)>;
+         };
+    };
 
     keymap {
 
@@ -99,27 +112,27 @@ nice_view_spi: &spi0 {
 
         default_layer {
 
-        //  | ESCAPE          | LINE/JOIN/EXPLODE               | OFFSET/OFFSETSRF  |
-        //  | LCTRL           | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
-        //  | SHIFT                                             | LAYERCHANGE       |
+        //  | ESCAPE          | LINE/JOIN/FILLET                    | OFFSET/OFFSETSRF   |
+        //  | LCTRL           | ZOOM SELECTED/ISOLATE/SHOW - CTRLZ  | EXTRACTSRF/EXPLODE | 
+        //  | SHIFT                                                 | LAYERCHANGE        |
 
         bindings = <
-             &kp ESC           &td1                              &td4
-             &kp LCTRL         &td0                              &kp LC(F10)     
-             &kp LSHIFT                                          &lt LAYERONE LC(LS(F10)) 
+             &kp ESC           &td1                                  &td4
+             &kp LCTRL         &showctrlz                            &td6                                 
+             &kp LSHIFT                                              &lt LAYERONE LC(LS(F10))   
              >;
         };
 
         layer_one {
 
-        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | FILLET     |
-        //  | LAYERCHANGE/SWITCH VIEW  | DUPEDGE/DUPBORDER          | REDO       |
-        //  | NONE                                                  | UNDO       |
+        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | GROUP/UNGROUP      |
+        //  | LAYERCHANGE/SWITCH VIEW  | REDO                       | DUPEDGE/DUPBORDER  |
+        //  | SELLAST                                               | NONE               |
 
          bindings = < 
-             &kp DEL                    &td3                         &kp LC(LS(F5))
-             &lt BLUETOOTH LC(TAB)      &td2                         &kp LC(Y)
-             &kp LC(Z)                                               &none
+             &kp DEL                    &td3                         &td5 
+             &lt BLUETOOTH LC(TAB)      &kp LC(Y)                    &td2 
+             &kp LC(LS(F10))                                         &none
              >;
         };
 
