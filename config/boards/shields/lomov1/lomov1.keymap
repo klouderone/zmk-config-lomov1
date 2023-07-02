@@ -42,7 +42,7 @@ nice_view_spi: &spi0 {
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
+            label = "ISOLATE/SHOW";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
@@ -50,7 +50,7 @@ nice_view_spi: &spi0 {
 
          td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
+            label = "LINE/EXPLODE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LC(LS(F2))>, <&kp LC(LS(F12))>;
@@ -58,18 +58,26 @@ nice_view_spi: &spi0 {
 
           td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2";
+            label = "SHIFT/SELLAST";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&none>, <&kp LC(F12)>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LSHIFT>, <&kp LC(LS(F10))>;
         };
 
           td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_3";
+            label = "UNTRIMSRF/EXTENDSRF";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LC(Y)>, <&kp LC(LS(F10))>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(LS(F7))>, <&kp LC(LS(F9))>;
+        };
+
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "OFFSET/OFFSETSRF";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(LS(F3))>, <&kp LC(LS(F8))>;
         };
     };
     
@@ -81,27 +89,27 @@ nice_view_spi: &spi0 {
 
         default_layer {
 
-        //   | ESCAPE          | LINE/EXPLODE  | OFFSET       |
-        //   | SHIFT/SELLAST   | ISOLATE/SHOW  | PLANAR SRF   |
-        //   | FILLET CRV                      | LCTRL + UNDO |
+        //   | ESCAPE          | LINE/EXPLODE  | OFFSET/OFFSETSRF  |
+        //   | SHIFT/SELLAST   | ISOLATE/SHOW  | ZOOM SELECTED     |
+        //   | FILLET CRV                      | LCTRL             |
 
         bindings = <
-             &kp ESC                    &td1          &kp LC(LS(F3))
-             &td2                       &td0          &kp LC(LS(F4))     
-             &lt LAYERONE LC(LS(F5))                  &lt LCTRL LC(Z)   
+             &kp ESC               &td1          &td4
+             &td2                  &td0          &kp LC(LS(F4))     
+             &kp <LAYERONE>                      &lt LCTRL  
         >;
         };
 
         layer_one {
 
-        //   | DELETE       | UNTRIM SRF  | OFFSET SRF |
-        //   | SWITCH VIEW  | DUPBO       | EXTEND SRF |
-        //   | NONE                       | REDO       |
+        //   | DELETE       | UNTRIM SRF/EXTEND SRF | FILLET     |
+        //   | SWITCH VIEW  | DUPBO                 | REDO       |
+        //   | NONE                                 | UNDO       |
 
          bindings = < 
-             &kp DEL                   &kp LC(LS(F7))     &kp LC(LS(F8))
-             &lt BLUETOOTH LC(TAB)     &kp LC(LS(F6))     &kp LC(LS(F9))
-             &none                                        &td3                          
+             &kp DEL                   &td3               &kp LC(LS(F5))
+             &lt BLUETOOTH LC(TAB)     &kp LC(LS(F6))     &kp LC(Y)
+             &none                                        &kp LC(Z)                         
         >;
         };
 
