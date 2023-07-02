@@ -82,46 +82,57 @@ nice_view_spi: &spi0 {
         };
     };
 
+
+    combos {
+        compatible = "zmk,combos";
+        combo_ctrlz {
+            timeout-ms = <300>;
+            key-positions = <4 6>;
+            bindings = <&kp LC(Z)>;
+        };
+    };
+
+
     keymap {
 
         compatible = "zmk,keymap";
 
         default_layer {
 
-        //   | ESCAPE          | LINE/JOIN/EXPLODE               | OFFSET/OFFSETSRF  |
-        //   | LCTRL           | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
-        //   | SHIFT                                             | LAYERCHANGE       |
+        //  | ESCAPE          | LINE/JOIN/EXPLODE               | OFFSET/OFFSETSRF  |
+        //  | LCTRL           | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
+        //  | SHIFT                                             | LAYERCHANGE       |
 
         bindings = <
-             &kp ESC        &td1     &td4
-             &kp LCTRL      &td0     &kp LC(F10)     
-             &kp LSHIFT              &lt LAYERONE LC(LS(F10)) 
+             &kp ESC           &td1                              &td4
+             &kp LCTRL         &td0                              &kp LC(F10)     
+             &kp LSHIFT                                          &lt LAYERONE LC(LS(F10)) 
              >;
         };
 
         layer_one {
 
-        //   | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | FILLET     |
-        //   | LAYERCHANGE/SWITCH VIEW  | DUPEDGE/DUPBORDER          | REDO       |
-        //   | NONE                                                  | UNDO       |
+        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | FILLET     |
+        //  | LAYERCHANGE/SWITCH VIEW  | DUPEDGE/DUPBORDER          | REDO       |
+        //  | NONE                                                  | UNDO       |
 
          bindings = < 
-             &kp DEL                   &td3               &kp LC(LS(F5))
-             &lt BLUETOOTH LC(TAB)     &td2               &kp LC(Y)
-             &kp LC(Z)                                    &none
+             &kp DEL                    &td3                         &kp LC(LS(F5))
+             &lt BLUETOOTH LC(TAB)      &td2                         &kp LC(Y)
+             &kp LC(Z)                                               &none
              >;
         };
 
         layer_bt {
 
-        //   | Bootloader  | BT Profile 0      | BT Profile 1 |
-        //   | NONE        | BT Profile Clear  | NONE         |
-        //   | NONE                            | NONE         |
+        //  | Bootloader      | BT Profile 0      | BT Profile 1 |
+        //  | NONE            | BT Profile Clear  | NONE         |
+        //  | NONE                                | NONE         |
 
         bindings = <
-             &bootloader       &bt BT_SEL 0      &bt BT_SEL 1
-             &none             &bt BT_CLR        &none
-             &none                               &none   
+             &bootloader       &bt BT_SEL 0        &bt BT_SEL 1
+             &none             &bt BT_CLR          &none
+             &none                                 &none   
              >;
         };
     };
