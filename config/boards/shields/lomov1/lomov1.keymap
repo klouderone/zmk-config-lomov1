@@ -86,6 +86,7 @@ nice_view_spi: &spi0 {
         compatible = "zmk,combos";
         combo_CTRLZ {
             timeout-ms = <300>;
+            #binding-cells = <2>;
             key-positions = <4 6>;
             bindings = <&kp LC(Z)>;
             layers = <0>;
