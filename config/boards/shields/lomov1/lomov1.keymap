@@ -42,26 +42,26 @@ nice_view_spi: &spi0 {
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "ISOLATE/SHOW";
+            label = "ZOOM SELECTED/ISOLATE/SHOW";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(LS(F4))>, <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
         };
 
          td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "LINE/EXPLODE";
+            label = "LINE/JOIN/EXPLODE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LC(LS(F2))>, <&kp LC(LS(F12))>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F12))>;
         };
 
           td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "UNTRIMSRF/EXTENDSRF";
+            label = "TRIM/UNTRIMSRF/EXTENDSRF";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&kp LC(LS(F7))>, <&kp LC(LS(F9))>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(F11)>, <&kp LC(LS(F7))>, <&kp LC(LS(F9))>;
         };
 
         td4: tap_dance_4 {
@@ -81,13 +81,13 @@ nice_view_spi: &spi0 {
 
         default_layer {
 
-        //   | ESCAPE          | LINE/EXPLODE  | OFFSET/OFFSETSRF  |
-        //   | SHIFT/SELLAST   | ISOLATE/SHOW  | ZOOM SELECTED     |
-        //   | LAYER CHANGE                    | LCTRL             |
+        //   | ESCAPE          | LINE/EXPLODE/JOIN               | OFFSET/OFFSETSRF  |
+        //   | SHIFT/SELLAST   | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
+        //   | LAYER CHANGE                                      | LCTRL             |
 
         bindings = <
-             &kp ESC                     &td1          &td4
-             &kp LSHIFT                   &td0          &kp LC(LS(F4))     
+             &kp ESC                      &td1         &td4
+             &kp LSHIFT                   &td0         &kp LC(F10)     
              &lt LAYERONE LC(LS(F10))                  &kp LCTRL  
         >;
         };
