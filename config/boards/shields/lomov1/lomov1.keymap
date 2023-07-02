@@ -56,6 +56,15 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F12))>;
         };
 
+         td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DUPEDGE/DUPBORDER";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(F9)>, <LC(LS(F6))>;
+        };
+
+
           td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             label = "TRIM/UNTRIMSRF/EXTENDSRF";
@@ -73,6 +82,15 @@ nice_view_spi: &spi0 {
         };
     };
     
+    combos {
+        compatible = "zmk,combos";
+        combo_CTRLZ {
+            timeout-ms = <300>;
+            key-positions = <4 6>;
+            bindings = <&kp LC(Z)>
+            layers = <0>;
+        };
+    };
 
 
     keymap {
@@ -81,41 +99,42 @@ nice_view_spi: &spi0 {
 
         default_layer {
 
-        //   | ESCAPE          | LINE/EXPLODE/JOIN               | OFFSET/OFFSETSRF  |
-        //   | SHIFT/SELLAST   | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
-        //   | LAYER CHANGE                                      | LCTRL             |
+        //   | ESCAPE          | LINE/JOIN/EXPLODE               | OFFSET/OFFSETSRF  |
+        //   | LCTRL           | ZOOM SELECTED/ISOLATE/SHOW      | EXTRACTSRF        |
+        //   | SHIFT                                             | LAYERCHANGE       |
 
         bindings = <
-             &kp ESC                      &td1         &td4
-             &kp LSHIFT                   &td0         &kp LC(F10)     
-             &lt LAYERONE LC(LS(F10))                  &kp LCTRL  
-        >;
+             &kp ESC        &td1     &td4
+             &kp LCTRL      &td0     &kp LC(F10)     
+             &lt LSHIFT              &kp LAYERONE LC(LS(F10)) 
+             >;
         };
+
 
         layer_one {
 
-        //   | DELETE                   | UNTRIM SRF/EXTEND SRF | FILLET     |
-        //   | LAYERCHANGE/SWITCH VIEW  | DUPBO                 | REDO       |
-        //   | NONE                                             | UNDO       |
+        //   | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | FILLET     |
+        //   | LAYERCHANGE/SWITCH VIEW  | DUPEDGE/DUPBORDER          | REDO       |
+        //   | NONE                                                  | UNDO       |
 
          bindings = < 
              &kp DEL                   &td3               &kp LC(LS(F5))
-             &lt BLUETOOTH LC(TAB)     &kp LC(LS(F6))     &kp LC(Y)
-             &none                                        &kp LC(Z)                         
-        >;
+             &lt BLUETOOTH LC(TAB)     &td2               &kp LC(Y)
+             &kp LC(Z)                                    &none
+             >;
         };
 
         layer_bt {
 
-        //   | NONE   | BT Profile 0      | BT Profile 1 |
-        //   | NONE   | BT Profile Clear  | NONE         |
-        //   | NONE                       | Bootloader   |
+        //   | Bootloader  | BT Profile 0      | BT Profile 1 |
+        //   | NONE        | BT Profile Clear  | NONE         |
+        //   | NONE                            | NONE         |
 
         bindings = <
-             &none             &bt BT_SEL 0      &bt BT_SEL 1
+             &bootloader       &bt BT_SEL 0      &bt BT_SEL 1
              &none             &bt BT_CLR        &none
-             &none                               &bootloader   
-        >;
+             &none                               &none   
+             >;
         };
     };
 };
