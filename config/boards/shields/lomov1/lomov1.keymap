@@ -96,7 +96,7 @@ nice_view_spi: &spi0 {
         bindings = <
              &kp ESC               &td1          &td4
              &td2                  &td0          &kp LC(LS(F4))     
-             &kp LAYERONE                        &lt LCTRL  
+             &kp LAYERONE                        &kp LCTRL  
         >;
         };
 
