@@ -82,18 +82,18 @@ nice_view_spi: &spi0 {
 
         td5: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
-            label = "MOVE/ROTATE3D";
+            label = "MOVE/ROTATE3D/MIRROR";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F1)>, <&kp LC(F2)>;
+            bindings = <&kp LC(F1)>, <&kp LC(F2)>, <&kp LC(F4)>;
         };
 
         td6: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
-            label = "EXTRACTSRF/EXPLODE";
+            label = "EXTRACTSRF/EXPLODE/EXTRACTISOCURVE";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F10)>, <&kp LC(LS(F12))>;
+            bindings = <&kp LC(F10)>, <&kp LC(LS(F12)), <&kp LC(F3)>>;
         };
 
         offsetctrlz: offset_ctrlz {
@@ -124,9 +124,9 @@ nice_view_spi: &spi0 {
 
         layer_one {
 
-        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | MOVE/ROTATE3D      |
+        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | MOVE/ROTATE3D/MIRROR   |
         //  | LAYERCHANGE/SWITCH VIEW  | REDO                       | TAB/DUPEDGE/DUPBORDER  |
-        //  | SELLAST                                               | NONE               |
+        //  | SELLAST                                               | NONE                   |
 
          bindings = < 
              &kp DEL                    &td3                         &td5 
