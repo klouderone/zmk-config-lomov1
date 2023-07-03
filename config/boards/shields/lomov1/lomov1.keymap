@@ -93,7 +93,7 @@ nice_view_spi: &spi0 {
             label = "EXTRACTSRF/EXPLODE/EXTRACTISOCURVE";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F10)>, <&kp LC(LS(F12)), <&kp LC(F3)>;
+            bindings = <&kp LC(F10)>, <&kp LC(LS(F12))>, <&kp LC(F3)>;
         };
 
         offsetctrlz: offset_ctrlz {
