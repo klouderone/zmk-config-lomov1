@@ -96,11 +96,11 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(F10)>, <&kp LC(LS(F12))>, <&kp LC(F3)>;
         };
 
-        offsetctrlz: offset_ctrlz {
+        movectrlz: move_ctrlz {
             compatible = "zmk,behavior-mod-morph";
-            label = "OFFSET_CTRLZ";
+            label = "MOVE_CTRLZ";
             #binding-cells = <0>;
-            bindings = <&td4>, <&kp LC(Z)>;
+            bindings = <&td5>, <&kp LC(Z)>;
             mods = <(MOD_LSFT)>;
          };
     };
@@ -112,24 +112,24 @@ nice_view_spi: &spi0 {
         default_layer {
 
         //  | ESCAPE          | LINE/JOIN/FILLET                | ZOOM SELECTED/ISOLATE/SHOW          |
-        //  | LCTRL           | OFFSET/OFFSETSRF - CTRLZ        | EXTRACTSRF/EXPLODE/EXTRACTISOCURVE  | 
+        //  | LCTRL           | MOVE/ROTATE3D/MIRROR - CTRLZ    | EXTRACTSRF/EXPLODE/EXTRACTISOCURVE  | 
         //  | SHIFT                                             | LAYERCHANGE                         |
 
          bindings = <
              &kp ESC           &td1                              &td0
-             &kp LCTRL         &offsetctrlz                      &td6                                 
+             &kp LCTRL         &movectrlz                      &td6                                 
              &kp LSHIFT                                          &mo LAYERONE
              >;
         };
 
         layer_one {
 
-        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | MOVE/ROTATE3D/MIRROR   |
+        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | OFFSET/OFFSETSRF       |
         //  | LAYERCHANGE/SWITCH VIEW  | REDO                       | TAB/DUPEDGE/DUPBORDER  |
         //  | SELLAST                                               | NONE                   |
 
          bindings = < 
-             &kp DEL                    &td3                         &td5 
+             &kp DEL                    &td3                         &td4 
              &lt BLUETOOTH LC(TAB)      &kp LC(Y)                    &td2 
              &kp LC(LS(F10))                                         &none
              >;
