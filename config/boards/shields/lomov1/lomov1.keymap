@@ -42,34 +42,34 @@ nice_view_spi: &spi0 {
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "ZOOM SELECTED/ISOLATE/SHOW";
+            label = "ZOOM WINDOW/HIDE/SHOW";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(LS(F4))>, <&kp LC(LS(F1))>, <&kp LC(LS(F11))>;
+            bindings = <&kp LC(LS(F4))>, <&kp LC(F8)>, <&kp LC(LS(F11))>;
         };
 
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "LINE/JOIN/FILLET";
+            label = "JOIN/EXPLODE/FILLET";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(LS(F2))>, <&kp LC(F12)>, <&kp LC(LS(F5))>;
+            bindings = <&kp LC(F12)>,  <&kp LC(LS(F12))>,  <&kp LC(LS(F5))>;
         };
 
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAB/DUPEDGE/DUPBORDER";
+            label = "COPY";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp TAB>, <&kp LC(F9)>, <&kp LC(LS(F6))>;
+            bindings = <&kp LC(LS(F6))>, <&kp LC(V)>;
         };
 
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TRIM/UNTRIMSRF/EXTENDSRF";
+            label = "SPLIT/TRIM/EXTENDSRF";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F11)>, <&kp LC(LS(F7))>, <&kp LC(LS(F9))>;
+            bindings = <&kp LC(LS(F7))>, <&kp LC(F11)>,  <&kp LC(LS(F9))>;
         };
 
         td4: tap_dance_4 {
@@ -90,10 +90,18 @@ nice_view_spi: &spi0 {
 
         td6: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
-            label = "EXTRACTSRF/EXPLODE/EXTRACTISOCURVE";
+            label = "EXTRACTSRF/EXTRACTISOCURVE";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(F10)>, <&kp LC(LS(F12))>, <&kp LC(F3)>;
+            bindings = <&kp LC(F10)>, <&kp LC(F3)>;
+        };
+
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SELLAST/ISOLATE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <LC(LS(F10))>, <LC(LS(F1))>;
         };
 
         movectrlz: move_ctrlz {
@@ -111,27 +119,27 @@ nice_view_spi: &spi0 {
 
         default_layer {
 
-        //  | ESCAPE          | LINE/JOIN/FILLET                | ZOOM SELECTED/ISOLATE/SHOW          |
-        //  | LCTRL           | MOVE/ROTATE3D/MIRROR - CTRLZ    | EXTRACTSRF/EXPLODE/EXTRACTISOCURVE  | 
+        //  | ESCAPE          | MOVE/ROTATE3D/MIRROR - CTRLZ    | EXTRACTSRF/EXTRACTISOCURVE          |
+        //  | LCTRL           | JOIN/EXPLODE/FILLET             | ZOOM WINDOW/HIDE/SHOW               | 
         //  | SHIFT                                             | LAYERCHANGE                         |
 
          bindings = <
-             &kp ESC           &td1                              &td0
-             &kp LCTRL         &movectrlz                      &td6                                 
+             &kp ESC           &movectrlz                        &td6
+             &kp LCTRL         &td1                              &td0                                 
              &kp LSHIFT                                          &mo LAYERONE
              >;
         };
 
         layer_one {
 
-        //  | DELETE                   | TRIM/UNTRIM SRF/EXTEND SRF | OFFSET/OFFSETSRF       |
-        //  | LAYERCHANGE/SWITCH VIEW  | REDO                       | TAB/DUPEDGE/DUPBORDER  |
-        //  | SELLAST                                               | NONE                   |
+        //  | TAB                      | SPLIT/TRIM/EXTEND SRF      | OFFSET/OFFSETSRF       |
+        //  | LAYERCHANGE/SWITCH VIEW  | DELETE                     | COPY                   |
+        //  | SELLAST/ISOLATE                                       | NONE                   |
 
          bindings = < 
-             &kp DEL                    &td3                         &td4 
-             &lt BLUETOOTH LC(TAB)      &kp LC(Y)                    &td2 
-             &kp LC(LS(F10))                                         &none
+             &kp TAB                    &td3                         &td4 
+             &lt BLUETOOTH LC(TAB)      &kp DEL                      &td2 
+             &td7                                                    &none
              >;
         };
 
