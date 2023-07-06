@@ -101,7 +101,7 @@ nice_view_spi: &spi0 {
             label = "SELLAST/ISOLATE";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <LC(LS(F10))>, <LC(LS(F1))>;
+            bindings = <&kp LC(LS(F10))>, <&kp LC(LS(F1))>;
         };
 
         movectrlz: move_ctrlz {
