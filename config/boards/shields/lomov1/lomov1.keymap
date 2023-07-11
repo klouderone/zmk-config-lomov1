@@ -61,7 +61,7 @@ nice_view_spi: &spi0 {
             label = "COPY";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(LS(F6))>, <&kp LC(V)>;
+            bindings = <&kp LC(C)>, <&kp LC(V)>, <&kp LC(LS(F6))>;
         };
 
         td3: tap_dance_3 {
@@ -104,11 +104,11 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F10))>, <&kp LC(LS(F1))>;
         };
 
-        movectrlz: move_ctrlz {
+        joinctrlz: join_ctrlz {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOVE_CTRLZ";
+            label = "JOIN_CTRLZ";
             #binding-cells = <0>;
-            bindings = <&td5>, <&kp LC(Z)>;
+            bindings = <&td1>, <&kp LC(Z)>;
             mods = <(MOD_LSFT)>;
          };
     };
@@ -124,8 +124,8 @@ nice_view_spi: &spi0 {
         //  | SHIFT                                             | LAYERCHANGE                         |
 
          bindings = <
-             &kp ESC           &movectrlz                        &td6
-             &kp LCTRL         &td1                              &td0                                 
+             &kp ESC           &td5                              &td6
+             &kp LCTRL         &joinctrlz                        &td0                                 
              &kp LSHIFT                                          &mo LAYERONE
              >;
         };
