@@ -42,10 +42,10 @@ nice_view_spi: &spi0 {
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "ZOOM WINDOW/HIDE/SHOW";
+            label = "HIDE/SHOW/ZOOM WINDOW";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LC(LS(F4))>, <&kp LC(F8)>, <&kp LC(LS(F11))>;
+            bindings = <&kp LC(LS(F11))>, <&kp LC(LS(F4))>, <&kp LC(F8)>;
         };
 
         td1: tap_dance_1 {
@@ -104,11 +104,11 @@ nice_view_spi: &spi0 {
             bindings = <&kp LC(LS(F10))>, <&kp LC(LS(F1))>;
         };
 
-        joinctrlz: join_ctrlz {
+        ZOOMctrlz: zoom_ctrlz {
             compatible = "zmk,behavior-mod-morph";
             label = "JOIN_CTRLZ";
             #binding-cells = <0>;
-            bindings = <&td1>, <&kp LC(Z)>;
+            bindings = <&td0>, <&kp LC(Z)>;
             mods = <(MOD_LSFT)>;
          };
     };
@@ -120,12 +120,12 @@ nice_view_spi: &spi0 {
         default_layer {
 
         //  | ESCAPE          | MOVE/ROTATE3D/MIRROR - CTRLZ    | EXTRACTSRF/EXTRACTISOCURVE          |
-        //  | LCTRL           | JOIN/EXPLODE/FILLET             | ZOOM WINDOW/HIDE/SHOW               | 
+        //  | LCTRL           | HIDE/SHOW/ZOOM WINDOW           | JOIN/EXPLODE/FILLET                 | 
         //  | SHIFT                                             | LAYERCHANGE                         |
 
          bindings = <
              &kp ESC           &td5                              &td6
-             &kp LCTRL         &joinctrlz                        &td0                                 
+             &kp LCTRL         &zoomctrlz                        &td1                                 
              &kp LSHIFT                                          &mo LAYERONE
              >;
         };
